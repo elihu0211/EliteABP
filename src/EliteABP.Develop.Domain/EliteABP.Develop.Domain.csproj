@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>EliteABP.Develop</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Meziantou.Analyzer" Version="2.0.183">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="9.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Volo.Abp" />
+    <Using Include="Volo.Abp.Auditing" />
+    <Using Include="Volo.Abp.DependencyInjection" />
+    <Using Include="Volo.Abp.Domain.Entities" />
+    <Using Include="Volo.Abp.Domain.Entities.Auditing" />
+    <Using Include="Volo.Abp.Domain.Repositories" />
+    <Using Include="Volo.Abp.Modularity" />
+  </ItemGroup>
+
+</Project>
