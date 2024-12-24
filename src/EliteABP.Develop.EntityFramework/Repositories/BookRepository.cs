@@ -1,4 +1,5 @@
 ﻿using EliteABP.Develop.Books;
+using EliteABP.Develop.Books.Entities;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;

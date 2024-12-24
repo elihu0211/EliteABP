@@ -1,4 +1,4 @@
-﻿using EliteABP.Develop.Authors;
+﻿using EliteABP.Develop.Authors.Entities;
 using Shouldly;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Guids;

@@ -1,4 +1,6 @@
-﻿namespace EliteABP.Develop.Books;
+﻿using EliteABP.Develop.Books.Entities;
+
+namespace EliteABP.Develop.Books;
 public interface IBookRepository : IRepository<Book, Guid>
 {
     // 尋找章節編號

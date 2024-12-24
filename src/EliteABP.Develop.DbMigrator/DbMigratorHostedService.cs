@@ -1,4 +1,4 @@
-﻿using EliteABP.Develop.Data;
+﻿using EliteABP.Develop.Authors.Data;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Volo.Abp;
@@ -14,10 +14,9 @@ public class DbMigratorHostedService(IHostApplicationLifetime hostApplicationLif
         });
 
         await application.InitializeAsync();
-
-        // 執行遷移
-        await application.ServiceProvider.GetRequiredService<NovelDbMigretionService>().MigrateAsync();
-
+        {
+            await application.ServiceProvider.GetRequiredService<AuthorDbMigretionService>().MigrateAsync();
+        }
         await application.ShutdownAsync();
 
         hostApplicationLifetime.StopApplication();

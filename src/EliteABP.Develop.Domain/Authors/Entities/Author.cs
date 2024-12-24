@@ -1,4 +1,4 @@
-﻿namespace EliteABP.Develop.Authors;
+﻿namespace EliteABP.Develop.Authors.Entities;
 public class Author : AggregateRoot<Guid> /*聚合根*/
 {
     public string Name { get; set; } = null!;

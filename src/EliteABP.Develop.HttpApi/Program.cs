@@ -1,6 +1,6 @@
 using EliteABP.Develop.HttpApi;
-using Serilog.Events;
 using Serilog;
+using Serilog.Events;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
@@ -22,8 +22,9 @@ try
 #if DEBUG
                 .MinimumLevel.Debug()
 #else
-                        .MinimumLevel.Information()
+                .MinimumLevel.Information()
 #endif
+                .MinimumLevel.Override("Volo.Abp", LogEventLevel.Warning)
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
                 .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Warning)
                 .Enrich.FromLogContext()
@@ -31,11 +32,9 @@ try
                 .WriteTo.Async(c => c.Console());
         });
 
-    // 增加 ABP 啟動模塊
     await builder.AddApplicationAsync<DevelopHttpApiModule>();
     var app = builder.Build();
 
-    // 調用 ABP 初始化
     await app.InitializeApplicationAsync();
     await app.RunAsync();
     return 0;

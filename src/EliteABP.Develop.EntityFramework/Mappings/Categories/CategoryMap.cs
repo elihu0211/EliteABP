@@ -1,9 +1,9 @@
-﻿using EliteABP.Develop.Categories;
+﻿using EliteABP.Develop.Categories.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 
-namespace EliteABP.Develop.Mappings;
+namespace EliteABP.Develop.Mappings.Categories;
 public class CategoryMap : IEntityTypeConfiguration<Category>
 {
     public void Configure(EntityTypeBuilder<Category> builder)

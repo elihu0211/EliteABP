@@ -1,29 +1,43 @@
-﻿using Volo.Abp;
+﻿using Microsoft.OpenApi.Models;
+using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
 using Volo.Abp.Modularity;
+using Volo.Abp.Swashbuckle;
 
 namespace EliteABP.Develop.HttpApi;
 
 [DependsOn(
-    typeof(DevelopApplicationModule),
     typeof(AbpAutofacModule),
+    typeof(AbpSwashbuckleModule),
     typeof(AbpAspNetCoreMvcModule),
-    typeof(AbpAspNetCoreSerilogModule))]
+    typeof(AbpAspNetCoreSerilogModule),
+    typeof(DevelopApplicationModule),
+    typeof(DevelopEntityFrameworkModule)
+)]
 public class DevelopHttpApiModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddOpenApi();
         context.Services.AddControllers();
+        context.Services.AddAbpSwaggerGen(options =>
+        {
+            options.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "Your API Title",
+                Version = "v1"
+            });
+            options.DocInclusionPredicate((docName, description) => true);
+            options.CustomSchemaIds(type => type.FullName);
+            options.HideAbpEndpoints();
+        });
 
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
-            // 應用服務自動映射成控制器裡的方法。(AuthorAppService)
             options.ConventionalControllers.Create(typeof(DevelopApplicationModule).Assembly, opts =>
             {
-                opts.RootPath = "novel";
+                opts.RootPath = "develop";
             });
         });
     }
@@ -38,16 +52,18 @@ public class DevelopHttpApiModule : AbpModule
 
         app.UseRouting();
 
-        // ABP 端點
-        app.UseConfiguredEndpoints();
+        app.UseSwagger();
+        app.UseAbpSwaggerUI(options =>
+        {
+            options.RoutePrefix = string.Empty;
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Your API Title v1");
+        });
 
         app.UseEndpoints(endpoints =>
         {
-            if (env.IsDevelopment())
-            {
-                endpoints.MapOpenApi();
-            }
             endpoints.MapControllers();
         });
+        app.UseAbpSerilogEnrichers();
+        app.UseConfiguredEndpoints();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using EliteABP.Develop.Books;
+using EliteABP.Develop.Books.Entities;
 using Volo.Abp.Threading;
 
 namespace EliteABP.Develop.Repositories.Extensions;

@@ -1,4 +1,4 @@
-﻿using EliteABP.Develop.Dtos.Author;
+﻿using EliteABP.Develop.Authors;
 using Shouldly;
 using Volo.Abp.Application.Dtos;
 
@@ -6,10 +6,10 @@ namespace EliteABP.Develop.Application.Tests.UnitTests;
 
 public class AuthorAppServiceTests : DevelopApplicationTestBase
 {
-    readonly IAuthorAppService _authorAppService;
+    readonly IAuthorTestAppService _authorAppService;
     public AuthorAppServiceTests()
     {
-        _authorAppService = GetRequiredService<IAuthorAppService>();
+        _authorAppService = GetRequiredService<IAuthorTestAppService>();
     }
 
     [Fact]
@@ -24,7 +24,7 @@ public class AuthorAppServiceTests : DevelopApplicationTestBase
                     Name = "張家老三",
                     Description = "中國內地不知名網路小說作家",
                 };
-                await _authorAppService.CreatrAsync(input);
+                await _authorAppService.CreateAsync(input);
             });
         });
     }
@@ -41,7 +41,7 @@ public class AuthorAppServiceTests : DevelopApplicationTestBase
                 Sorting = "Name"
             };
 
-            return await _authorAppService.GetListAsync(input);
+            return await _authorAppService.GetAllAsync(input);
         });
 
         result.TotalCount.ShouldBe(1);

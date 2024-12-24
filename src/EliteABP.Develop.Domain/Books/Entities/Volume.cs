@@ -1,4 +1,4 @@
-﻿namespace EliteABP.Develop.Books;
+﻿namespace EliteABP.Develop.Books.Entities;
 public class Volume : Entity<Guid>, IHasCreationTime /* 審計接口: 創建時間 */
 {
     public Book Book { get; set; }

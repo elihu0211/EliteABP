@@ -1,4 +1,4 @@
-﻿namespace EliteABP.Develop.Books;
+﻿namespace EliteABP.Develop.Books.Entities;
 public class Chapter : Entity<Guid>, IHasCreationTime /* 審計接口 */
 {
     public Volume Volume { get; set; } // 導航屬性

@@ -1,4 +1,4 @@
-﻿namespace EliteABP.Develop.Books;
+﻿namespace EliteABP.Develop.Books.Entities;
 public class ChapterText : AuditedEntity<Guid> /* 帶有審計屬性的實體 */
 {
 

@@ -11,7 +11,7 @@ public class DevelopDbContextFactory : IDesignTimeDbContextFactory<DevelopDbCont
         var congiguration = BuildConfiguration();
 
         var builder = new DbContextOptionsBuilder<DevelopDbContext>()
-            .UseNpgsql(congiguration.GetConnectionString("Novel"),
+            .UseNpgsql(congiguration.GetConnectionString("Develop"),
             optionsBuilder => optionsBuilder.MigrationsAssembly(Assembly.GetExecutingAssembly()));
 
         return new DevelopDbContext(builder.Options);

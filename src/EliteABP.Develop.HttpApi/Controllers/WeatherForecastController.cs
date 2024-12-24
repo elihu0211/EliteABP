@@ -1,14 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
+using Volo.Abp.AspNetCore.Mvc;
 
 namespace EliteABP.Develop.HttpApi.Controllers;
 
-[ApiController]
 [Route("[controller]")]
-public class WeatherForecastController(ILogger<WeatherForecastController> logger) : ControllerBase
+public class WeatherForecastController : AbpControllerBase
 {
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<int> Get()
     {
+        Logger.LogInformation("");
         return Enumerable.Range(1, 5).ToArray();
     }
 }

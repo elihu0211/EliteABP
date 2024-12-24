@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EliteABP.Develop.EntityFram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EliteABP.Develop.Application.Tests", "test\EliteABP.Develop.Application.Tests\EliteABP.Develop.Application.Tests.csproj", "{6E486BE2-4709-427C-B5D0-DEEFF1E71394}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EliteABP.Develop.Domain.Shared", "src\EliteABP.Develop.Domain.Shared\EliteABP.Develop.Domain.Shared.csproj", "{5D88FDDE-FE5F-4531-AA90-0CF988EED3FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{6E486BE2-4709-427C-B5D0-DEEFF1E71394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E486BE2-4709-427C-B5D0-DEEFF1E71394}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E486BE2-4709-427C-B5D0-DEEFF1E71394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D88FDDE-FE5F-4531-AA90-0CF988EED3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D88FDDE-FE5F-4531-AA90-0CF988EED3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D88FDDE-FE5F-4531-AA90-0CF988EED3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D88FDDE-FE5F-4531-AA90-0CF988EED3FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{7C894A7C-974F-471B-947F-0182263F53F1} = {5830E74D-FDA3-4844-98F0-D31D5252941C}
 		{23014800-8011-4D2A-8B94-31F03BD932D2} = {5830E74D-FDA3-4844-98F0-D31D5252941C}
 		{6E486BE2-4709-427C-B5D0-DEEFF1E71394} = {5830E74D-FDA3-4844-98F0-D31D5252941C}
+		{5D88FDDE-FE5F-4531-AA90-0CF988EED3FC} = {044DD34E-75FD-445D-8D74-26C7D3A1D104}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {34BE29A9-11CD-4F10-808D-8B4543D9D0A9}

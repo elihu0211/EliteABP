@@ -1,10 +1,9 @@
-﻿using EliteABP.Develop.Books;
+﻿using EliteABP.Develop.Books.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 
-namespace EliteABP.Develop.Mappings;
-
+namespace EliteABP.Develop.Mappings.Books;
 public class ChapterMap : IEntityTypeConfiguration<Chapter>
 {
     public void Configure(EntityTypeBuilder<Chapter> builder)

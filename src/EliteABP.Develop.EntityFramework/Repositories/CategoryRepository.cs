@@ -1,4 +1,5 @@
 ﻿using EliteABP.Develop.Categories;
+using EliteABP.Develop.Categories.Entities;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
